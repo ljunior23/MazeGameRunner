@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 
@@ -83,19 +82,31 @@ const LabyrinthGame = () => {
       ))}
       <View style={styles.controls}>
         <TouchableOpacity onPress={() => movePlayer('up')}>
-          <Text style={styles.button}>UP</Text>
+          <View style={{marginBottom: 20, alignItems: 'center'}}><Text style={styles.button}>UP</Text></View>
         </TouchableOpacity>
+        <View style={styles.leftRight}>
         <TouchableOpacity onPress={() => movePlayer('left')}>
-          <Text style={styles.button}>LEFT</Text>
+              <View style={{marginRight: 20}}>
+                <Text style={styles.button}>LEFT</Text> 
+              </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => movePlayer('right')}>
-          <Text style={styles.button}>RIGHT</Text>
+            <View style={{marginLeft: 20}}>
+                <Text style={styles.button}>Right</Text> 
+              </View>
         </TouchableOpacity>
+        </View>
         <TouchableOpacity onPress={() => movePlayer('down')}>
-          <Text style={styles.button}>DOWN</Text>
+          <View style={{marginBottom: 20, alignItems: 'center'}}>
+            <Text style={styles.button}>DOWN</Text>          
+          </View>
         </TouchableOpacity>
+        </View>
+        <View>
         <TouchableOpacity onPress={generateMaze}>
-          <Text style={styles.button}>RESET</Text>
+          <View style={{alignItems: 'center'}}>
+                <Text style={styles.button}>RESET</Text> 
+              </View>
         </TouchableOpacity>
       </View>
       {hasKey && <Text style={styles.message}>Congratulation! You found the key!</Text>}
@@ -107,7 +118,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: '#6b8894'
   },
   row: {
     flexDirection: 'row'
@@ -117,26 +129,31 @@ const styles = StyleSheet.create({
     height: 40,
     backgroundColor: 'white',
     borderWidth: 1,
-    borderColor: 'black'
+    borderColor: '#ad87ca'
   },
   player: {
     backgroundColor: 'red'
   },
   wall: {
-    backgroundColor: 'black'
+    backgroundColor: '#ad87ca'
   },
   key: {
     backgroundColor: 'yellow'
   },
-  controls: {
+  leftRight: {
     flexDirection: 'row',
+    marginBottom: 20,
+    justifyContent: 'space-evenly'
+  },
+  controls: {
     marginTop: 20
   },
   button: {
     paddingHorizontal: 10,
     paddingVertical: 5,
-    backgroundColor: 'gray',
-    marginRight: 10
+    backgroundColor: '#5851ae',
+    marginRight: 10,
+    color: 'white'
   },
   message: {
     marginTop: 20,
