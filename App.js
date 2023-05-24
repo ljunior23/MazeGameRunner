@@ -4,7 +4,7 @@ import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 const numRows = 10;
 const numCols = 10;
 
-const LabyrinthGame = () => {
+const MazeGameRunner = () => {
   const [maze, setMaze] = useState([]);
   const [playerPosition, setPlayerPosition] = useState({ x: 0, y: 0 });
   const [hasKey, setHasKey] = useState(false);
@@ -162,4 +162,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default LabyrinthGame;
+export default MazeGameRunner;
